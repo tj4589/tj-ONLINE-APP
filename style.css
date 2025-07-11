@@ -263,8 +263,9 @@ cursor: pointer;
 
 @media (max-width : 600px){
   .quizContainer-start{
-    height: 250px;
-    width: 380px;
+    height: auto;
+    width: auto;
+    padding: 2px;
     background-color:rgb(119, 55, 55);
     border-radius: 10px;
     text-align: center;
