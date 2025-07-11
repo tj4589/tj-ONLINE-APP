@@ -1,3 +1,27 @@
+function resetQuiz() {
+  userAnswers = {};
+  score = 0;
+
+  const allRadios = document.querySelectorAll('input[type="radio"]');
+  allRadios.forEach(radio => {
+    radio.checked = false;
+  });
+
+  const allOptions = document.querySelectorAll('.correct, .wrong');
+  allOptions.forEach(el => el.classList.remove('correct', 'wrong'));
+
+  if (typeof swiper !== "undefined") {
+    swiper.slideTo(0);
+  }
+
+  const scoreDisplay = document.querySelector(".scoreDisplay");
+  if (scoreDisplay) {
+    scoreDisplay.textContent = "Score: 0";
+  }
+
+  document.querySelector(".quizContainer-start").style.display = "flex";
+  document.querySelector(".mainQuiz").style.display = "none";
+}
 function quizstarted() {
   const mins = parseInt(document.getElementById("minutes").value) || 0;
   const secs = parseInt(document.getElementById("seconds").value) || 0;
@@ -32,8 +56,7 @@ function quizstarted() {
         const total = Object.keys(userAnswers).length;
         let finalscore = calculateScore();
         alert(`Your score: ${finalscore}\nYou missed: ${total - finalscore}`);
-        document.querySelector(".quizContainer-start").style.display = "none";
-        document.querySelector(".mainQuiz").style.display = "none";
+        resetQuiz()
     }
   }, 1000);
 }
@@ -46,8 +69,7 @@ subbtn.addEventListener("click", () => {
   const total = Object.keys(userAnswers).length;
   let finalscore = calculateScore();
   alert(`Your score: ${finalscore}\nYou missed: ${total - finalscore}`);
-  document.querySelector(".quizContainer-start").style.display = "none";
-  document.querySelector(".mainQuiz").style.display = "none";
+  resetQuiz()
 });
 startbtn.addEventListener("click", function () {
   startbtn.classList.add("startBTNpressed");
