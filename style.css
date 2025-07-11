@@ -314,7 +314,7 @@ font-size: 16px;
 .previousNext{
     background-color: beige;
     height: 35px;
-    width: auto;
+    width: 75px;
     margin-top: auto;
     border: none;
     border-radius: 4px;
@@ -333,6 +333,7 @@ font-size: 16px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgb(107, 108, 78);
     transition: box-shadow 0.2s, transform 0.2s;
+    color: black !important;
 }
 .time{
     display: flex;
