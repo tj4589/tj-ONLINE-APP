@@ -290,6 +290,7 @@ p{
     justify-content: center;
     border-radius: 5px;
     /* display: none; */
+    padding: 20px;
 }
  .swiper {
 width: 100%;
@@ -311,11 +312,9 @@ cursor: pointer;
 font-size: 16px;
 }
 .previousNext{
-    align-self:flex-start;
-    margin: 20px;
     background-color: beige;
     height: 35px;
-    width: 75px;
+    width: auto;
     margin-top: auto;
     border: none;
     border-radius: 4px;
