@@ -29,12 +29,13 @@ function quizstarted() {
     if (timeLeft < 0) {
       clearInterval(timer);
       timediv.innerHTML = "Time's up!";
+        const total = Object.keys(userAnswers).length;
+        let finalscore = calculateScore();
+        alert(`Your score: ${finalscore}\nYou missed: ${total - finalscore}`);
+        document.querySelector(".quizContainer-start").style.display = "none";
+        document.querySelector(".mainQuiz").style.display = "none";
     }
   }, 1000);
-  subbtn.addEventListener("click", () => {
-    clearInterval(timer); // Stop timer on submit
-    alert("Quiz submitted!");
-  });
 }
 let timer;
 const startbtn = document.querySelector(".startBTN");
